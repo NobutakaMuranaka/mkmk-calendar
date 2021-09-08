@@ -63,3 +63,6 @@ Layout/SpaceInsideArrayLiteralBrackets:
 
 Style/BlockComments:
   Enabled: false
+  
+Layout/ExtraSpacing:
+  Enabled: false

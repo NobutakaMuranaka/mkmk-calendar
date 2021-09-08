@@ -1,47 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <div class="toppage">
-<h1 class="top">カレンダー</h1>
+<h1 class="top">MYトレーニングメモ</h1>
 <br>
 
 <div class="row">
-<div class="col-md-4">
-	<div class="schedule">今後の予定一覧</div>
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>タイトル</th>
-      <th>日程</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= link_to blog.title , blog %></td>
-        <td><%= blog.start_time.strftime("%m-%d") %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
+<div class="col-md-3">
 
 <%= form_with(model: @blog, local: true) do |form| %>
 
   <div class="title">
-    <div class="form-tag">タイトル</div>
+    <div class="form-tag">トレーニング名</div>
+    <%= form.text_area :title %>
+  </div>
+  
+  <div class="weight">
+    <div class="form-tag">重量（kg）</div>
+    <%= form.text_field :title %>
+  </div>
+  
+  <div class="rep">
+    <div class="form-tag">回数</div>
+    <%= form.text_field :title %>
+  </div>
+  
+  <div class="set">
+    <div class="form-tag">セット数</div>
     <%= form.text_field :title %>
   </div>
 
-
-  <div class="content">
-    <div class="form-tag">内容</div>
-    <%= form.text_field :content %>
-  </div>
-
-    <div class="time">
-    <div class="form-tag">時間</div>
+  <div class="time">
+    <div class="form-tag">トレーニング日</div>
     <%= form.datetime_select :start_time %>
   </div>
 
@@ -51,11 +40,7 @@
 <% end %>
 </div>
 
-<br>
-
-
-<br>
-<div class="col-md-8">
+<div class="col-md-9">
 <%= month_calendar events: @blogs do |date, blogs| %>
   <%= date.day %>
 
