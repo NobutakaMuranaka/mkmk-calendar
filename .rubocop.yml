@@ -69,3 +69,6 @@ Style/BlockComments:
   
 Layout/ExtraSpacing:
   Enabled: false
+
+Naming/AsciiIdentifiers:
+  Enabled: false
