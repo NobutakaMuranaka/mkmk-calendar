@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'rails-controller-testing'
   gem 'rubocop-airbnb'
+  gem "factory_bot_rails", "~> 4.10.0"
 end
 
 group :test do
@@ -60,3 +61,5 @@ gem 'simple_calendar', '~> 2.0'
 gem 'devise'
 
 gem 'bootstrap-sass'
+
+gem 'faker'
